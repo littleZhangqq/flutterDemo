@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
     return new Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
-        title: Text("我是导航栏标题"),
+        title: Text("我是导航栏标题",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
       ),
       body: new ListView.builder(
         itemBuilder: (context,index){
@@ -39,7 +39,7 @@ class _PageItemState extends State<PageItem> {
           child: new FlatButton(
               onPressed: (){
                 print("点击了cell");
-                Navigator.of(context).pushNamed('/a');
+                // Navigator.of(context).pushNamed('/a');
               },
               child: new Padding(
                 padding: new EdgeInsets.only(left: 0.0, top: 10.0, right: 10.0, bottom: 10.0),

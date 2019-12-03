@@ -1,16 +1,15 @@
 
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
-class DetailPage extends StatefulWidget {
+
+class Product extends StatefulWidget {
   @override
-  _DetailPageState createState() => _DetailPageState();
+  _ProductState createState() => _ProductState();
 }
-class _DetailPageState extends State<DetailPage> with SingleTickerProviderStateMixin {
+class _ProductState extends State<Product> with SingleTickerProviderStateMixin {
   TabController tabCtl;
   List<String> titles;
-
   @override
   void initState() {
     super.initState();
@@ -23,6 +22,7 @@ class _DetailPageState extends State<DetailPage> with SingleTickerProviderStateM
       "游戏",
       "历史"
     ];
+    
     tabCtl = TabController(
       length: titles.length,
       vsync: this
@@ -45,8 +45,7 @@ class _DetailPageState extends State<DetailPage> with SingleTickerProviderStateM
 
   Widget _naviBar(){
     return AppBar(
-      title: Text("横向滑动",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-      elevation: 0,
+      title: Text("横向滑动",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
       bottom: _topView()
     );
   }
@@ -96,4 +95,6 @@ class _DetailPageState extends State<DetailPage> with SingleTickerProviderStateM
     print(b);
     return Color.fromARGB(255, r, g, b);
   }
+
+  
 }
