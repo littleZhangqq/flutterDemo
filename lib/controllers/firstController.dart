@@ -7,6 +7,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var pageArray = ["gridView","xxxx","xxxx","xxxx"];
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context,index){
           return new PageItem();
         },
-        itemCount: 20,
+        itemCount: pageArray.length,
       ),
     );
   }
