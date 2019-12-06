@@ -28,6 +28,7 @@ class _MyGridViewState extends State<MyGridView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         title: Text(
           "网格视图grid",
