@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:testdemo/controllers/FirstChildCtls/gridTest.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,30 +19,22 @@ class _HomePageState extends State<HomePage> {
       ),
       body: new ListView.builder(
         itemBuilder: (context,index){
-          return new PageItem();
+          return _cell(index);
         },
         itemCount: pageArray.length,
       ),
     );
   }
-}
 
-class PageItem extends StatefulWidget {
-  @override
-  _PageItemState createState() => _PageItemState();
-}
-
-class _PageItemState extends State<PageItem> {
-  @override
-  Widget build(BuildContext context) {
+  Widget _cell(int idx){
     return Container(
-       ///卡片包装
       child: new Card(
            ///增加点击效果
           child: new FlatButton(
               onPressed: (){
                 print("点击了cell");
                 // Navigator.of(context).pushNamed('/a');
+                pushMethond(idx);
               },
               child: new Padding(
                 padding: new EdgeInsets.only(left: 0.0, top: 10.0, right: 10.0, bottom: 10.0),
@@ -51,7 +44,7 @@ class _PageItemState extends State<PageItem> {
                     ///文本描述
                     new Container(
                         child: new Text(
-                          "这是一点描述",
+                          pageArray[idx],
                           style: TextStyle(
                             color: Colors.blue,
                             fontSize: 14.0,
@@ -72,7 +65,8 @@ class _PageItemState extends State<PageItem> {
                           color: Colors.grey,
                         ),
                         new Image(
-                            image: NetworkImage("https://yiqi-shenyang-test.oss-cn-beijing.aliyuncs.com/uploads/images/20191014/a6ead9d011a87ec96f32ad152173ebcf.jpg"),
+                            image: NetworkImage("https://yiqi-shenyang-test.oss-cn-beijing."
+                                "aliyuncs.com/uploads/images/20191014/a6ead9d011a87ec96f32ad152173ebcf.jpg"),
                             height: 70,
                             fit: BoxFit.fitWidth,
                             filterQuality: FilterQuality.high,
@@ -84,12 +78,20 @@ class _PageItemState extends State<PageItem> {
                   ],
                 ),
               ))),
-
     );
   }
-}
 
-//imageView
+  void pushMethond(int index){
+    switch (index) {
+      case 0:     
+        Navigator.push(context,MaterialPageRoute(builder: (context)=> MyGridView()));
+        break;
+      default:
+    }
+  }
+}
+  
+//imageView 以下为测试控件
 class InitImageView extends StatefulWidget {
   @override
   _InitImageViewState createState() => _InitImageViewState();
@@ -117,6 +119,7 @@ class InitListView extends StatefulWidget {
 }
 
 class _InitListViewState extends State<InitListView> {
+  colors
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -125,6 +128,7 @@ class _InitListViewState extends State<InitListView> {
           return new ListViewItem();
         },
         itemCount: 30,
+
       ),
     );
   }

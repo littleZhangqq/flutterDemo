@@ -19,7 +19,7 @@ class _MyGridViewState extends State<MyGridView> {
       alignment: Alignment.center,
       child: Text(
         title,
-        style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.deepPurple),
+        style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),
       ),
       color: Colors.cyan,
     );
@@ -43,8 +43,9 @@ class _MyGridViewState extends State<MyGridView> {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           mainAxisSpacing: 20,
-          crossAxisSpacing: 10
+          crossAxisSpacing: 20
         ),
+        
       ),
     );
   }
