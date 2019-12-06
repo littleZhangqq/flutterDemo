@@ -119,7 +119,6 @@ class InitListView extends StatefulWidget {
 }
 
 class _InitListViewState extends State<InitListView> {
-  colors
   @override
   Widget build(BuildContext context) {
     return Container(
