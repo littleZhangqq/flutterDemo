@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:testdemo/controllers/FirstChildCtls/gridTest.dart';
+import 'package:testdemo/controllers/SecondChildCtls/tableTest.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var pageArray = ["gridView","xxxx","xxxx","xxxx"];
+  var pageArray = ["gridView","tableLoadAndRefresh","xxxx","xxxx"];
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                         margin: new EdgeInsets.only(top: 6.0, bottom: 2.0),
                         alignment: Alignment.topLeft),
                     new Padding(padding: EdgeInsets.all(10.0)),
+
                     ///三个平均分配的横向图标文字
                     new Row(
                       children: <Widget>[
@@ -85,6 +87,9 @@ class _HomePageState extends State<HomePage> {
     switch (index) {
       case 0:     
         Navigator.push(context,MaterialPageRoute(builder: (context)=> MyGridView()));
+        break;
+      case 1:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => TableDetailTest()));
         break;
       default:
     }
